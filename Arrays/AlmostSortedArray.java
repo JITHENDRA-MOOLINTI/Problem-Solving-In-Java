@@ -25,6 +25,33 @@ public class AlmostSortedArray {
 		if(!isPresent) {
 			System.out.println(-1);
 		}
+		//Binary Search-Optimize Solution
+		int low=0;
+		int high=a.length-1;
+		while(low<=high) {
+			int mid=(low+high)/2;
+			if(a[mid]==target) {
+				System.out.println(mid);
+				break;
+			}
+			 if(a[mid-1]==target&&mid>=low) {
+				System.out.println(mid-1);
+				break;
+			}
+			
+			if(a[mid+1]==target&&mid<=high) {
+				System.out.println(mid+1);
+				break;
+			}
+			
+		    if(target<a[mid]) {
+		    	high=mid-2;
+		    }
+		    else {
+		    	low=mid+2;
+		    }
+			
+		}
 	}
 
 }
