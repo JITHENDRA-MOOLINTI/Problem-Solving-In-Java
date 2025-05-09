@@ -30,15 +30,12 @@ public class KadanesAlgorithm {
 		System.out.println(maxSum);
 		
 	
-		
 		//Approach 2 Kadane's Algorithm
 	     int currentSum=0;
 	     int maxSum=Integer.MIN_VALUE;
 	     for(int i=0;i<a.length;i++) {
 	    	 currentSum+=a[i];
-	    	 System.out.println(currentSum);
 	    	 maxSum=Math.max(currentSum, maxSum);
-	    	 System.out.println(maxSum);
 	    	 if(currentSum<0) {
 	    		 currentSum=0;
 	    	 }
